@@ -32,7 +32,7 @@ function App() {
         <Route path="/" component={HomeScreen} exact />
         <Route path="/product/:slug" component={ProductScreen} />
         <Route
-          path="/:category/:subcategory"
+          path="/product/:category/:subcategory"
           component={CategoryDetailsScreen}
         />
         <Route path="/cart" component={CartScreen} />
@@ -47,7 +47,7 @@ function App() {
         <Route path="/order/:id" component={OrderDetailsScreen} />
         <Route path="/admin/userlist" component={UserListScreen} />
         <Route path="/admin/user/:id/edit" component={UserEditScreen} />
-        <Route path="/admin/productlist" exact component={ProductListScreen} />
+        <Route path="/admin/productlist" component={ProductListScreen} />
         <Route path="/admin/categories" component={CategoryListScreen} />
         <Route path="/admin/brands" component={BrandListScreen} />
         <Route path="/admin/product/:slug/edit" component={ProductEditScreen} />

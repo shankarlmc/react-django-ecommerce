@@ -180,7 +180,7 @@ function ProductEditScreen({ match, history }) {
         </Link>
       </Grid>
       <Grid container spacing={3}>
-        <Grid item md={4} sm={12} xs={12} lg={8}>
+        <Grid item md={12} sm={12} xs={12} lg={8}>
           <div style={{ position: "sticky", top: "100px" }}>
             <Typography component="h1" variant="h5" className={classes.title}>
               Update Product Details

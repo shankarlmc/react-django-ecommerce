@@ -64,7 +64,7 @@ function CategoryDetailsScreen({ match }) {
   const categoryDetails = useSelector((state) => state.categoryDetails);
   const { error, loading, category } = categoryDetails;
 
-  console.log(category.length ? category[0].products.length : "loading...");
+
 
   useEffect(() => {
     dispatch(listCategoryDetails(match.params.subcategory));
@@ -82,8 +82,8 @@ function CategoryDetailsScreen({ match }) {
   document.title = "SK ONLINE STORE";
 
   return (
-    <Container className={classes.cardGrid} maxWidth="xl">
-      <Grid container spacing={4}>
+    <Container className={classes.cardGrid} maxWidth="lg">
+      <Grid container spacing={0}>
         {loading || loadingBrands ? (
           data.map((item, index) => (
             <Grid key={index} item xs={12} sm={6} md={3}>
@@ -94,104 +94,11 @@ function CategoryDetailsScreen({ match }) {
           <Message variant="error">{error}</Message>
         ) : (
           <>
-            <Grid item lg={2} className={classes.productFilter}>
-              <div className={classes.filterButton}>
-                <Button variant="outlined" startIcon={<FilterListIcon />}>
-                  Filter
-                </Button>
-              </div>
-              <Divider />
-              <div className={classes.filterOptions}>
-                <Accordion>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                    <Typography>Price</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <FormControl component="fieldset">
-                      <RadioGroup
-                        aria-label="brands"
-                        name="radio-buttons-group"
-                      >
-                        <FormControlLabel
-                          value="low"
-                          control={<Radio />}
-                          label="Low"
-                        />
-                        <FormControlLabel
-                          value="high"
-                          control={<Radio />}
-                          label="High"
-                        />
-                      </RadioGroup>
-                    </FormControl>
-                  </AccordionDetails>
-                </Accordion>
-                <Accordion>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                    <Typography>Ratings</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <FormControl component="fieldset">
-                      <FormControlLabel
-                        value="4.5"
-                        control={<Checkbox />}
-                        label="4.5 & up"
-                      />
-                      <FormControlLabel
-                        value="4.0"
-                        control={<Checkbox />}
-                        label="4.0 & up"
-                      />
-                      <FormControlLabel
-                        value="3.5"
-                        control={<Checkbox />}
-                        label="3.5 & up"
-                      />
-                      <FormControlLabel
-                        value="3.0"
-                        control={<Checkbox />}
-                        label="3.0 & up"
-                      />
-                    </FormControl>
-                  </AccordionDetails>
-                </Accordion>
-                <Accordion>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                    <Typography>Brands</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <FormControl component="fieldset">
-                      <RadioGroup
-                        aria-label="brands"
-                        name="radio-buttons-group"
-                      >
-                        {brands.map((brand, index) => (
-                          <FormControlLabel
-                            key={index}
-                            value={brand.slug}
-                            control={<Radio />}
-                            label={brand.name}
-                          />
-                        ))}
-                      </RadioGroup>
-                    </FormControl>
-                  </AccordionDetails>
-                </Accordion>
-              </div>
+            <Grid item lg={12} className={classes.productFilter}>
+
+
             </Grid>
-            <Grid item lg={10} className={classes.filteredProducts}>
+            <Grid item lg={12} className={classes.filteredProducts}>
               <Typography
                 variant="h3"
                 gutterBottom

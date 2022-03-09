@@ -41,7 +41,7 @@ def getTopProducts(request):
 def createProduct(request):
     user = request.user
     data = request.data
-    print(data['name'] in data)
+    # print(data['name'] in data)
     if data['name'] == '':
         message = {'detail': "Product name should not be empty."}
         return Response(message, status=status.HTTP_400_BAD_REQUEST)

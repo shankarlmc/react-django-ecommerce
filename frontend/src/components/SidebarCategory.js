@@ -113,7 +113,7 @@ export default function MenuListComposition() {
   }, [dispatch]);
 
   const handleDetailProduct = (category, subcategory) => {
-    history.push(`/${category}/${subcategory}`);
+    history.push(`/product/${category}/${subcategory}`);
     setOpen(false);
   };
 
